@@ -1,0 +1,19 @@
+body {
+  font-family: $font-family-default;
+  color: #222;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: $font-family-heading;
+}
+
+a {
+  color: $color-primary;
+  &:hover {
+    color: darken($color-primary, 20%);
+    text-decoration: none;
+  }
+}

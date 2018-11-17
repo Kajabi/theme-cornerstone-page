@@ -6,9 +6,9 @@ var concat = require("gulp-concat");
 gulp.task("concat-stylesheets", function(){
   return gulp.src([
 
-    "stylesheets/base/_variables.scss.liquid",
-    "stylesheets/base/_document.scss",
-    "stylesheets/base/_typography.scss",
+    "stylesheets/core/_variables.scss.liquid",
+    "stylesheets/core/_layout.scss",
+    "stylesheets/core/_typography.scss",
 
     "stylesheets/sections/_footer.scss",
     "stylesheets/sections/_header.scss",
