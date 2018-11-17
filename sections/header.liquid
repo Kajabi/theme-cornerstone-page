@@ -9,9 +9,11 @@
         <img src="{{ section.settings.logo | image_picker_url: 'logo.png' }}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
       </a>
       {% if section.settings.show_menu %}
-        {% for link in current_site.link_lists[section.settings.menu].links %}
-          <a href="{{ link.url }}">{{ link.name }}</a>
-        {% endfor %}
+        <span kjb-settings-id="{{ 'menu' | settings_id: section: section }}">
+          {% for link in current_site.link_lists[section.settings.menu].links %}
+            <a href="{{ link.url }}">{{ link.name }}</a>
+          {% endfor %}
+        </span>
       {% endif %}
       {% if section.settings.show_user_menu %}
         {% include "user_menu" %}

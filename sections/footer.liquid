@@ -6,7 +6,7 @@
   <div class="footer">
     <div class="container">
       {% if section.settings.show_logo %}
-        <img src="{{ section.settings.logo | image_picker_url: 'logo.png'}}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
+        <img src="{{ section.settings.logo | image_picker_url: 'logo_footer.png'}}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
       {% endif %}
       {% if section.settings.show_menu %}
         <span kjb-settings-id="{{ 'menu' | settings_id: section: section }}">
