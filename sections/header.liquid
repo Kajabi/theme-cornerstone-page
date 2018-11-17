@@ -5,12 +5,12 @@
 {% if section.settings.show_header %}
   <div class="header">
     <div class="container">
-      <a href="/" class="header-logo">
+      <a href="/">
         <img src="{{ section.settings.logo | image_picker_url: 'logo.png' }}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
       </a>
       {% if section.settings.show_menu %}
         {% for link in current_site.link_lists[section.settings.menu].links %}
-          <a class="header-link" href="{{ link.url }}">{{ link.name }}</a>
+          <a href="{{ link.url }}">{{ link.name }}</a>
         {% endfor %}
       {% endif %}
       {% if section.settings.show_user_menu %}

@@ -2,11 +2,28 @@
   This is an example of how to display a setting with a section and make
   it clickable in the theme editor with a kjb-settings-id
 -->
-<div class="footer">
-  <div class="container">
-    
+{% if section.settings.show_footer %}
+  <div class="footer">
+    <div class="container">
+      {% if section.settings.show_logo %}
+        <img src="{{ section.settings.logo | image_picker_url: 'logo.png'}}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
+      {% endif %}
+      {% if section.settings.show_menu %}
+        <span kjb-settings-id="{{ 'menu' | settings_id: section: section }}">
+          {% for link in current_site.link_lists[section.settings.menu].links %}
+            <a href="{{ link.url }}">{{ link.name }}</a>
+          {% endfor %}
+        </span>
+      {% endif %}
+      {% if section.settings.show_copyright %}
+        <span kjb-settings-id="{{ 'copyright' | settings_id: section: section }}">&copy; {{ 'now' | date: "%Y" }} {{ section.settings.copyright }}</span>
+      {% endif %}
+      {% if current_site.display_powered_by_link? %}
+        {{ powered_by_link }}
+      {% endif %}
+    </div>
   </div>
-</div>
+{% endif %}
 
 <!--
   Section Schema
@@ -21,16 +38,50 @@
   "name": "footer",
   "elements": [
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "This is an example setting of a heading"
+      "type": "checkbox",
+      "id": "show_footer",
+      "label": "Show Footer",
+      "default": "true"
     },
     {
-      "type": "rich_text",
-      "id": "body",
-      "label": "Body",
-      "default": "This is an example setting of a paragraph"
+      "type": "checkbox",
+      "id": "show_logo",
+      "label": "Show Logo",
+      "default": "true"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_menu",
+      "label": "Show Menu",
+      "default": "true"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_copyright",
+      "label": "Show Copyright",
+      "default": "true"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo Image",
+      "fit": "max",
+      "width": 1000,
+      "height": 1000,
+      "info": "Suggested dimensions: 360x80"
+    },
+    {
+      "type": "text",
+      "id": "copyright",
+      "label": "Copyright",
+      "default": "Kajabi"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "info": "The menu at the bottom footer.",
+      "default": "footer"
     }
   ]
 }
