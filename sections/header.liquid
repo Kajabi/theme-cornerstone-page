@@ -1,23 +1,24 @@
-<style>
-  #section-{{ section.id }} {
-
-  }
-</style>
-
 <!--
   This is an example of how to display a setting with a section and make
   it clickable in the theme editor with a kjb-settings-id
 -->
-<div class="section">
-  <div class="container">
-    <h3 kjb-settings-id="{{ 'heading' | settings_id: section: section }}">
-      {{ section.settings.heading }}
-    </h3>
-    <div kjb-settings-id="{{ 'body' | settings_id: section: section }}">
-      {{ section.settings.body }}
+{% if section.settings.show_header %}
+  <div class="header">
+    <div class="container">
+      <a href="/" class="header-logo">
+        <img src="{{ section.settings.logo | image_picker_url: 'logo.png' }}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
+      </a>
+      {% if section.settings.show_menu %}
+        {% for link in current_site.link_lists[section.settings.menu].links %}
+          <a class="header-link" href="{{ link.url }}">{{ link.name }}</a>
+        {% endfor %}
+      {% endif %}
+      {% if section.settings.show_user_menu %}
+        {% include "user_menu" %}
+      {% endif %}
     </div>
   </div>
-</div>
+{% endif %}
 
 <!--
   Section Schema
@@ -32,16 +33,38 @@
   "name": "Header",
   "elements": [
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "This is an example setting of a heading"
+      "type": "checkbox",
+      "id": "show_header",
+      "label": "Show Header",
+      "default": "true"
     },
     {
-      "type": "rich_text",
-      "id": "body",
-      "label": "Body",
-      "default": "This is an example setting of a paragraph"
+      "type": "checkbox",
+      "id": "show_menu",
+      "label": "Show Menu",
+      "default": "true"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_user_menu",
+      "label": "Show User Menu",
+      "default": "true"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo Image",
+      "fit": "max",
+      "width": 1000,
+      "height": 1000,
+      "info": "Suggested dimensions: 360x80"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu",
+      "info": "The topmost menu for the site.",
+      "default": "main-menu"
     }
   ]
 }

@@ -1,21 +1,10 @@
-<style>
-  #section-{{ section.id }} {
-
-  }
-</style>
-
 <!--
   This is an example of how to display a setting with a section and make
   it clickable in the theme editor with a kjb-settings-id
 -->
-<div class="section">
+<div class="footer">
   <div class="container">
-    <h3 kjb-settings-id="{{ 'heading' | settings_id: section: section }}">
-      {{ section.settings.heading }}
-    </h3>
-    <div kjb-settings-id="{{ 'body' | settings_id: section: section }}">
-      {{ section.settings.body }}
-    </div>
+    
   </div>
 </div>
 

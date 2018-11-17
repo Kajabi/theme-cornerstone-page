@@ -1,0 +1,94 @@
+[
+  {
+    "name": "Favicon",
+    "elements": [
+      {
+        "type": "header",
+        "content": "Favicon"
+      },
+      {
+        "type": "image_picker",
+        "id": "favicon",
+        "label": "Favicon Image",
+        "fit": "crop",
+        "width": 32,
+        "height": 32,
+        "info": "Must be a 32x32 PNG file. Transparency is supported. Please allow some time for favicon to change. Learn how to create your own favicon [here](canva_logos)"
+      }
+    ]
+  },
+  {
+    "name": "Typography",
+    "elements": [
+      {
+        "type": "header",
+        "content": "Typography"
+      },
+      {
+        "type": "font_select",
+        "label": "Heading Font Family",
+        "id": "heading_font_family",
+        "default": "Montserrat",
+        "preset": "google_fonts",
+        "options": []
+      },
+      {
+        "type": "font_select",
+        "label": "Base Font Family",
+        "id": "font_family",
+        "default": "Montserrat",
+        "preset": "google_fonts",
+        "options": []
+      }
+    ]
+  },
+  {
+    "name": "Color Scheme",
+    "elements": [
+      {
+        "type": "header",
+        "content": "Color Scheme"
+      },
+      {
+        "type": "color",
+        "id": "color_primary",
+        "label": "Primary",
+        "default": "#2e91fc"
+      }
+    ]
+  }
+  ,
+  {
+    "name": "Language",
+    "elements": [
+      {
+        "type": "header",
+        "content": "Language"
+      },
+      {
+        "type": "text",
+        "id": "language_login",
+        "label": "Login Text",
+        "default": "Login"
+      },
+      {
+        "type": "text",
+        "id": "language_logout",
+        "label": "Logout Text",
+        "default": "Logout"
+      },
+      {
+        "type": "text",
+        "id": "language_settings",
+        "label": "Settings Text",
+        "default": "Settings"
+      },
+      {
+        "type": "text",
+        "id": "language_library",
+        "label": "Library Text",
+        "default": "My Library"
+      }
+    ]
+  }
+]
