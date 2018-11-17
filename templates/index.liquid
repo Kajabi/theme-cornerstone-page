@@ -35,8 +35,10 @@
 
   </head>
   <body>
-    
+
+    {% section "header" %}
     {% content_for_index %}
+    {% section "footer" %}
 
     <!-- Javascripts ================================================== -->
     {{ 'core.js' | kajabi_asset_url | script_tag }}

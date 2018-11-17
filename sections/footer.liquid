@@ -1,0 +1,48 @@
+<style>
+  #section-{{ section.id }} {
+
+  }
+</style>
+
+<!--
+  This is an example of how to display a setting with a section and make
+  it clickable in the theme editor with a kjb-settings-id
+-->
+<div class="section">
+  <div class="container">
+    <h3 kjb-settings-id="{{ 'heading' | settings_id: section: section }}">
+      {{ section.settings.heading }}
+    </h3>
+    <div kjb-settings-id="{{ 'body' | settings_id: section: section }}">
+      {{ section.settings.body }}
+    </div>
+  </div>
+</div>
+
+<!--
+  Section Schema
+  The Schema is what drives the elements, blocks and presets for this particular
+  section. Elements define the setting for the section, while blocks allow you
+  to define sub-sections to add an arrange in this section.
+
+  Presets define what shows up in the theme editor when a user clicks "Add Section"
+-->
+{% schema %}
+{
+  "name": "footer",
+  "elements": [
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "This is an example setting of a heading"
+    },
+    {
+      "type": "rich_text",
+      "id": "body",
+      "label": "Body",
+      "default": "This is an example setting of a paragraph"
+    }
+  ]
+}
+{% endschema %}
