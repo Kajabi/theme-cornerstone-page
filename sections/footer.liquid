@@ -5,19 +5,25 @@
 {% if section.settings.show_footer %}
   <div class="footer">
     <div class="container">
-      {% if section.settings.show_logo %}
-        <img src="{{ section.settings.logo | image_picker_url: 'logo_footer.png'}}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
-      {% endif %}
-      {% if section.settings.show_menu %}
-        <span kjb-settings-id="{{ 'menu' | settings_id: section: section }}">
-          {% for link in current_site.link_lists[section.settings.menu].links %}
-            <a href="{{ link.url }}">{{ link.name }}</a>
-          {% endfor %}
-        </span>
-      {% endif %}
-      {% if section.settings.show_copyright %}
-        <span kjb-settings-id="{{ 'copyright' | settings_id: section: section }}">&copy; {{ 'now' | date: "%Y" }} {{ section.settings.copyright }}</span>
-      {% endif %}
+      <div class="media align-items-center">
+        {% if section.settings.show_logo %}
+          <div>
+            <img src="{{ section.settings.logo | image_picker_url: 'logo_footer.png'}}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
+          </div>
+        {% endif %}
+        <div class="media-body text-right">
+          {% if section.settings.show_menu %}
+            <span kjb-settings-id="{{ 'menu' | settings_id: section: section }}">
+              {% for link in current_site.link_lists[section.settings.menu].links %}
+                <a href="{{ link.url }}">{{ link.name }}</a>
+              {% endfor %}
+            </span>
+          {% endif %}
+          {% if section.settings.show_copyright %}
+            <span kjb-settings-id="{{ 'copyright' | settings_id: section: section }}">&copy; {{ 'now' | date: "%Y" }} {{ section.settings.copyright }}</span>
+          {% endif %}
+        </div>
+      </div>
     </div>
   </div>
 {% endif %}

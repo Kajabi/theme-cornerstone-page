@@ -5,19 +5,25 @@
 {% if section.settings.show_header %}
   <div class="header">
     <div class="container">
-      <a href="/">
-        <img src="{{ section.settings.logo | image_picker_url: 'logo.png' }}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
-      </a>
-      {% if section.settings.show_menu %}
-        <span kjb-settings-id="{{ 'menu' | settings_id: section: section }}">
-          {% for link in current_site.link_lists[section.settings.menu].links %}
-            <a href="{{ link.url }}">{{ link.name }}</a>
-          {% endfor %}
-        </span>
-      {% endif %}
-      {% if section.settings.show_user_menu %}
-        {% include "user_menu" %}
-      {% endif %}
+      <div class="media align-items-center">
+        <div>
+          <a href="/">
+            <img src="{{ section.settings.logo | image_picker_url: 'logo.png' }}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
+          </a>
+        </div>
+        <div class="media-body text-right">
+          {% if section.settings.show_menu %}
+            <span kjb-settings-id="{{ 'menu' | settings_id: section: section }}">
+              {% for link in current_site.link_lists[section.settings.menu].links %}
+                <a href="{{ link.url }}">{{ link.name }}</a>
+              {% endfor %}
+            </span>
+          {% endif %}
+          {% if section.settings.show_user_menu %}
+            {% include "user_menu" %}
+          {% endif %}
+        </div>
+      </div>
     </div>
   </div>
 {% endif %}
