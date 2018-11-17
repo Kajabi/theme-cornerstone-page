@@ -18,9 +18,6 @@
       {% if section.settings.show_copyright %}
         <span kjb-settings-id="{{ 'copyright' | settings_id: section: section }}">&copy; {{ 'now' | date: "%Y" }} {{ section.settings.copyright }}</span>
       {% endif %}
-      {% if current_site.display_powered_by_link? %}
-        {{ powered_by_link }}
-      {% endif %}
     </div>
   </div>
 {% endif %}
