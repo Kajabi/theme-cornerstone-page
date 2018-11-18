@@ -10,9 +10,11 @@
 -->
 <div class="section">
   <div class="container">
-    <h2 class="section-title" kjb-settings-id="{{ 'heading' | settings_id: section: section }}">
-      {{ section.settings.heading }}
-    </h2>
+    {% if section.settings.heading != "" %}
+      <h2 class="section-title" kjb-settings-id="{{ 'heading' | settings_id: section: section }}">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
     <div class="row align-items-center">
       {% for block in section.blocks %}
         {% case block.type %}
