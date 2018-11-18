@@ -10,11 +10,18 @@
 -->
 <div class="section">
   <div class="container">
-    <h3 kjb-settings-id="{{ 'heading' | settings_id: section: section }}">
+    <h2 class="section-title" kjb-settings-id="{{ 'heading' | settings_id: section: section }}">
       {{ section.settings.heading }}
-    </h3>
-    <div kjb-settings-id="{{ 'body' | settings_id: section: section }}">
-      {{ section.settings.body }}
+    </h2>
+    <div class="row align-items-center">
+      {% for block in section.blocks %}
+        {% case block.type %}
+          {% when 'text' %}
+            {% include "block_text" %}
+          {% when 'image' %}
+            {% include "block_image" %}
+        {% endcase %}
+      {% endfor %}
     </div>
   </div>
 </div>
@@ -35,16 +42,110 @@
       "type": "text",
       "id": "heading",
       "label": "Heading",
-      "default": "This is an example setting of a heading"
-    },
-    {
-      "type": "rich_text",
-      "id": "body",
-      "label": "Body",
-      "default": "This is an example setting of a paragraph"
+      "default": "This is an example heading"
     }
   ],
-  "blocks": [],
+  "blocks": [
+    {
+      "type": "text",
+      "name": "Text",
+      "elements": [
+        {
+          "type": "header",
+          "content": "Text"
+        },
+        {
+          "type": "rich_text",
+          "label": "Text",
+          "id": "text",
+          "default": "<h4>Text Block</h4><p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>"
+        },
+        {
+          "type": "header",
+          "content": "Block Appearance",
+          "style": "subheading"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "col-md-6",
+          "options": [
+            { "value": "col-md-1", "label": "1/12" },
+            { "value": "col-md-2", "label": "2/12" },
+            { "value": "col-md-3", "label": "3/12" },
+            { "value": "col-md-4", "label": "4/12" },
+            { "value": "col-md-5", "label": "5/12" },
+            { "value": "col-md-6", "label": "6/12" },
+            { "value": "col-md-7", "label": "7/12" },
+            { "value": "col-md-8", "label": "8/12" },
+            { "value": "col-md-9", "label": "9/12" },
+            { "value": "col-md-10", "label": "10/12" },
+            { "value": "col-md-11", "label": "11/12" },
+            { "value": "col-md-12", "label": "12/12" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "elements": [
+        {
+          "type": "header",
+          "content": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "fit": "max",
+          "width": 2300,
+          "height": 2300,
+          "info": "Suggested dimensions: 1856 × 1044"
+        },
+        {
+          "type": "action",
+          "id": "img_action",
+          "label": "Image Action",
+          "anchor": true,
+          "two_step": true,
+          "default": ""
+        },
+        {
+          "type": "checkbox",
+          "id": "link_target",
+          "label": "Open In New Window",
+          "default": "false"
+        },
+        {
+          "type": "header",
+          "content": "Block Appearance",
+          "style": "subheading"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "col-md-6",
+          "options": [
+            { "value": "col-md-1", "label": "1/12" },
+            { "value": "col-md-2", "label": "2/12" },
+            { "value": "col-md-3", "label": "3/12" },
+            { "value": "col-md-4", "label": "4/12" },
+            { "value": "col-md-5", "label": "5/12" },
+            { "value": "col-md-6", "label": "6/12" },
+            { "value": "col-md-7", "label": "7/12" },
+            { "value": "col-md-8", "label": "8/12" },
+            { "value": "col-md-9", "label": "9/12" },
+            { "value": "col-md-10", "label": "10/12" },
+            { "value": "col-md-11", "label": "11/12" },
+            { "value": "col-md-12", "label": "12/12" }
+          ]
+        }
+      ]
+    }
+  ],
   "presets": [
     {
       "name": "Section",

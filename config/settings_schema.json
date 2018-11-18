@@ -53,7 +53,7 @@
         "type": "color",
         "id": "color_primary",
         "label": "Primary",
-        "default": "#ffc022"
+        "default": "#ff8700"
       }
     ]
   }

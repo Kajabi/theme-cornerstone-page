@@ -12,7 +12,8 @@ gulp.task("concat-stylesheets", function(){
 
     "stylesheets/sections/_footer.scss",
     "stylesheets/sections/_header.scss",
-    "stylesheets/sections/_powered_by.scss"
+    "stylesheets/sections/_powered_by.scss",
+    "stylesheets/sections/_section.scss",
 
   ])
   .pipe(concat("styles.scss.liquid"))
