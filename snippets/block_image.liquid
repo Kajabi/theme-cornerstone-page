@@ -1,5 +1,5 @@
 <div class="{{ block.settings.width }}" kjb-settings-id="{{ 'image' | settings_id: section: section, block: block }}">
-  {% if b-Action == "" %}
+  {% if block.settings.img_action == "" %}
     <img src="{{ block.settings.image | image_picker_url: 'placeholder.png' }}"/>
   {% else %}
     <a href="{{ block.settings.img_action }}" target="{{ block.settings.link_target }}">
