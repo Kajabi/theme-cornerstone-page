@@ -1,9 +1,7 @@
-// Variables
-var gulp = require("gulp");
-var concat = require("gulp-concat");
+var gulp = require('gulp');
+var concat = require('gulp-concat');
 
-// Concatenate Stylesheets
-gulp.task("concat-stylesheets", function(){
+gulp.task('styles', function(){
   return gulp.src([
 
     "stylesheets/core/_variables.scss.liquid",
@@ -13,27 +11,22 @@ gulp.task("concat-stylesheets", function(){
     "stylesheets/sections/_footer.scss",
     "stylesheets/sections/_header.scss",
     "stylesheets/sections/_powered_by.scss",
-    "stylesheets/sections/_section.scss",
-
-  ])
-  .pipe(concat("styles.scss.liquid"))
-  .pipe(gulp.dest("./assets"));
+    "stylesheets/sections/_section.scss"
+    
+    ])
+    .pipe(concat("styles.scss.liquid"))
+    .pipe(gulp.dest('assets'))
 });
 
-// Concatenate Javascripts
-gulp.task("concat-javascripts", function(){
-  return gulp.src([
-
-  ])
-  .pipe(concat("scripts.js"))
-  .pipe(gulp.dest("./assets"));
+gulp.task('scripts', function(){
+  return gulp.src('./javascripts/*.js')
+    .pipe(concat("scripts.js"))
+    .pipe(gulp.dest('assets'))
 });
 
-// Watch
-gulp.task("watch", function() {
-  gulp.watch("./stylesheets/**/*.scss*", ["concat-stylesheets"]);
-  gulp.watch("./javascripts/**/*.js", ["concat-javascripts"]);
-});
+gulp.task('watch', function(){
+  gulp.watch('./stylesheets/**/*.scss*', gulp.series('styles'));
+  gulp.watch('./javascripts/*.js', gulp.series('scripts'));
+})
 
-// Default
-gulp.task("default", ["concat-stylesheets","concat-javascripts","watch"]);
+gulp.task('default', gulp.series('styles','scripts','watch'));
