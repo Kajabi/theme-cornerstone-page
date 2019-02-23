@@ -6,6 +6,7 @@ sass.compiler = require('node-sass');
 
 gulp.task('styles', function(){
   return gulp.src('./styles/styles.scss')
+    .pipe(concat("styles.min.css"))
     .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(gulp.dest('assets'))
 });
