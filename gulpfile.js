@@ -1,9 +1,12 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var sass = require('gulp-sass');
+
+sass.compiler = require('node-sass');
 
 gulp.task('styles', function(){
-  return gulp.src('./styles/theme.scss.liquid')
-    .pipe(concat("styles.css"))
+  return gulp.src('./styles/styles.scss')
+    .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
     .pipe(gulp.dest('assets'))
 });
 
