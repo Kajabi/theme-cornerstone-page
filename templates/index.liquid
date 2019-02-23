@@ -31,6 +31,8 @@
     {% else %}
       <link href="//fonts.googleapis.com/css?family={{ settings.font_family | replace: ' ', '+' }}:400,700,400italic,700italic|{{ settings.heading_font_family | replace: ' ', '+' }}:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     {% endif %}
+    <!-- KJB CSS Variables ================================================== -->
+    {% include "css-variables" %}
 
     <!-- Kajabi CSS ================================================== -->
     {{ 'core.css' | kajabi_asset_url | stylesheet_tag }}
