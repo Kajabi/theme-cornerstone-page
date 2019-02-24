@@ -1,9 +1,9 @@
 <div class="{{ block.settings.width }}" kjb-settings-id="{{ 'image' | settings_id: section: section, block: block }}">
   {% if block.settings.img_action == "" %}
-    <img src="{{ block.settings.image | image_picker_url: 'placeholder.png' }}"/>
+    <img src="{{ block.settings.image | image_picker_url: 'placeholder.png' }}" class="lazyload"/>
   {% else %}
     <a href="{{ block.settings.img_action }}" target="{{ block.settings.link_target }}">
-      <img src="{{ block.settings.image | image_picker_url: 'placeholder.png' }}"/>
+      <img src="{{ block.settings.image | image_picker_url: 'placeholder.png' }}" class="lazyload"/>
     </a>
   {% endif %}
 </div>
