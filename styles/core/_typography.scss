@@ -1,5 +1,5 @@
 body {
-  font-family: $font-family-default;
+  font-family: var(--font-default);
   color: #222;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
@@ -7,13 +7,12 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: $font-family-heading;
+  font-family: var(--font-heading);
 }
 
 a {
-  color: $color-primary;
+  color: var(--color-primary);
   &:hover {
-    color: darken($color-primary, 20%);
     text-decoration: none;
   }
 }

@@ -1,7 +1,7 @@
 .section {
   background: #fff;
   padding: 80px 0;
-  border-bottom: 1px solid $color-offset;
+  border-bottom: 1px solid var(--color-offset);
   &-title {
     margin-bottom: 80px;
     text-align: center;

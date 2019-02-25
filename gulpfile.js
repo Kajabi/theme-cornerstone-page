@@ -1,32 +1,25 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
+var sass = require('gulp-sass');
+
+sass.compiler = require('node-sass');
 
 gulp.task('styles', function(){
-  return gulp.src([
-
-    "stylesheets/core/_variables.scss.liquid",
-    "stylesheets/core/_layout.scss",
-    "stylesheets/core/_typography.scss",
-
-    "stylesheets/sections/_footer.scss",
-    "stylesheets/sections/_header.scss",
-    "stylesheets/sections/_powered_by.scss",
-    "stylesheets/sections/_section.scss"
-    
-    ])
-    .pipe(concat("styles.scss.liquid"))
+  return gulp.src('./styles/styles.scss')
+    .pipe(concat("styles.css"))
+    .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('assets'))
 });
 
 gulp.task('scripts', function(){
-  return gulp.src('./javascripts/*.js')
+  return gulp.src('./scripts/*.js')
     .pipe(concat("scripts.js"))
     .pipe(gulp.dest('assets'))
 });
 
 gulp.task('watch', function(){
-  gulp.watch('./stylesheets/**/*.scss*', gulp.series('styles'));
-  gulp.watch('./javascripts/*.js', gulp.series('scripts'));
+  gulp.watch('./styles/**/*.scss*', gulp.series('styles'));
+  gulp.watch('./scripts/*.js', gulp.series('scripts'));
 })
 
 gulp.task('default', gulp.series('styles','scripts','watch'));
