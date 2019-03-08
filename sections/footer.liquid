@@ -5,11 +5,9 @@
 {% if section.settings.show_footer %}
   <div class="footer">
     <div class="container">
-      <div class="media align-items-center">
+      <div class="media align-middle">
         {% if section.settings.show_logo %}
-          <div>
-            <img src="{{ section.settings.logo | image_picker_url: 'logo_footer.png'}}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
-          </div>
+          <img src="{{ section.settings.logo | image_picker_url: 'logo.png'}}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
         {% endif %}
         <div class="media-body text-right">
           {% if section.settings.show_menu %}

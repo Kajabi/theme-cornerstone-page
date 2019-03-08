@@ -8,14 +8,9 @@
   This is an example of how to display a setting with a section and make
   it clickable in the theme editor with a kjb-settings-id
 -->
-<div class="section">
+<div class="section{{ section.settings.spacing }}" kjb-settings-id="{{ 'spacing' | settings_id: section: section }}">
   <div class="container">
-    {% if section.settings.heading != "" %}
-      <h2 class="section-title" kjb-settings-id="{{ 'heading' | settings_id: section: section }}">
-        {{ section.settings.heading }}
-      </h2>
-    {% endif %}
-    <div class="row align-items-center">
+    <div class="row align-middle">
       {% for block in section.blocks %}
         {% case block.type %}
           {% when 'text' %}
@@ -41,10 +36,15 @@
   "name": "Section",
   "elements": [
     {
-      "type": "text",
-      "id": "heading",
-      "label": "Heading",
-      "default": "This is an example heading"
+      "type": "radio",
+      "id": "spacing",
+      "label": "Spacing",
+      "default": "",
+      "options": [
+        {"value": "-sm", "label": "Small"},
+        {"value": "", "label": "Medium"},
+        {"value": "-lg", "label": "Large"}
+      ]
     }
   ],
   "blocks": [
@@ -71,20 +71,20 @@
           "type": "select",
           "id": "width",
           "label": "Width",
-          "default": "col-md-6",
+          "default": "col-6",
           "options": [
-            { "value": "col-md-1", "label": "1/12" },
-            { "value": "col-md-2", "label": "2/12" },
-            { "value": "col-md-3", "label": "3/12" },
-            { "value": "col-md-4", "label": "4/12" },
-            { "value": "col-md-5", "label": "5/12" },
-            { "value": "col-md-6", "label": "6/12" },
-            { "value": "col-md-7", "label": "7/12" },
-            { "value": "col-md-8", "label": "8/12" },
-            { "value": "col-md-9", "label": "9/12" },
-            { "value": "col-md-10", "label": "10/12" },
-            { "value": "col-md-11", "label": "11/12" },
-            { "value": "col-md-12", "label": "12/12" }
+            { "value": "col-1", "label": "1/12" },
+            { "value": "col-2", "label": "2/12" },
+            { "value": "col-3", "label": "3/12" },
+            { "value": "col-4", "label": "4/12" },
+            { "value": "col-5", "label": "5/12" },
+            { "value": "col-6", "label": "6/12" },
+            { "value": "col-7", "label": "7/12" },
+            { "value": "col-8", "label": "8/12" },
+            { "value": "col-9", "label": "9/12" },
+            { "value": "col-10", "label": "10/12" },
+            { "value": "col-11", "label": "11/12" },
+            { "value": "col-12", "label": "12/12" }
           ]
         }
       ]
@@ -129,20 +129,20 @@
           "type": "select",
           "id": "width",
           "label": "Width",
-          "default": "col-md-6",
+          "default": "col-6",
           "options": [
-            { "value": "col-md-1", "label": "1/12" },
-            { "value": "col-md-2", "label": "2/12" },
-            { "value": "col-md-3", "label": "3/12" },
-            { "value": "col-md-4", "label": "4/12" },
-            { "value": "col-md-5", "label": "5/12" },
-            { "value": "col-md-6", "label": "6/12" },
-            { "value": "col-md-7", "label": "7/12" },
-            { "value": "col-md-8", "label": "8/12" },
-            { "value": "col-md-9", "label": "9/12" },
-            { "value": "col-md-10", "label": "10/12" },
-            { "value": "col-md-11", "label": "11/12" },
-            { "value": "col-md-12", "label": "12/12" }
+            { "value": "col-1", "label": "1/12" },
+            { "value": "col-2", "label": "2/12" },
+            { "value": "col-3", "label": "3/12" },
+            { "value": "col-4", "label": "4/12" },
+            { "value": "col-5", "label": "5/12" },
+            { "value": "col-6", "label": "6/12" },
+            { "value": "col-7", "label": "7/12" },
+            { "value": "col-8", "label": "8/12" },
+            { "value": "col-9", "label": "9/12" },
+            { "value": "col-10", "label": "10/12" },
+            { "value": "col-11", "label": "11/12" },
+            { "value": "col-12", "label": "12/12" }
           ]
         }
       ]

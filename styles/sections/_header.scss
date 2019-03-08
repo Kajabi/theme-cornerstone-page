@@ -1,26 +1,11 @@
 .header {
-  background: #fff;
   padding: 20px 0;
-  border-bottom: 1px solid var(--color-offset);
+  border-bottom: 1px solid #eee;
   img {
     height: 40px;
   }
   a {
+    
     margin-right: 20px;
-  }
-  .dropdown {
-    &-menu {
-      left: auto !important;
-      right: 0;
-    }
-    img {
-      border-radius: 50%;
-    }
-    a {
-      display: block;
-      padding: 5px 15px;
-      margin-right: 0;
-      font-size: 14px;
-    }
   }
 }
