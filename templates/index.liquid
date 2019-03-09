@@ -22,22 +22,20 @@
     <link href="{{ settings.favicon | image_picker_url: 'favicon.png' }}?v=2" rel="shortcut icon" />
     <link rel="canonical" href="{{ canonical_url }}" />
 
-    <!-- Boostrap CSS ================================================== -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
     <!-- Google Fonts ================================================== -->
-    {% if settings.font_family ==  settings.heading_font_family%}
+    {% if settings.font_family %}
       <link href="//fonts.googleapis.com/css?family={{ settings.font_family | replace: ' ', '+' }}:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    {% else %}
-      <link href="//fonts.googleapis.com/css?family={{ settings.font_family | replace: ' ', '+' }}:400,700,400italic,700italic|{{ settings.heading_font_family | replace: ' ', '+' }}:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     {% endif %}
 
-    <!-- KJB CSS Variables ================================================== -->
+    <!-- Cornerstone CSS ================================================== -->
+    <link rel="stylesheet" href="https://www.kajabicornerstone.com/stylesheets/cornerstone-beta-1.1.1.css">
+
+    <!-- CSS Settings Variables ================================================== -->
     {% include "css-variables" %}
 
     <!-- Kajabi CSS ================================================== -->
     {{ 'core.css' | kajabi_asset_url | stylesheet_tag }}
-    {{ 'styles.css' | asset_url | stylesheet_tag }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'overrides.css' | asset_url | stylesheet_tag }}
 
     <!-- Header hook ====================================================== -->
@@ -56,7 +54,5 @@
     <script charset='ISO-8859-1' src='https://fast.wistia.com/assets/external/E-v1.js'></script>
     <script charset='ISO-8859-1' src='https://fast.wistia.com/labs/crop-fill/plugin.js'></script>
     {{ 'scripts.js' | asset_url | script_tag }}
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
   </body>
 </html>

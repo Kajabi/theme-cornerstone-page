@@ -5,12 +5,10 @@
 {% if section.settings.show_header %}
   <div class="header">
     <div class="container">
-      <div class="media align-items-center">
-        <div>
-          <a href="/">
-            <img src="{{ section.settings.logo | image_picker_url: 'logo.png' }}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
-          </a>
-        </div>
+      <div class="media align-middle">
+        <a href="/">
+          <img src="{{ section.settings.logo | image_picker_url: 'logo.png' }}" kjb-settings-id="{{ 'logo' | settings_id: section: section }}"/>
+        </a>
         <div class="media-body text-right">
           {% if section.settings.show_menu %}
             <span kjb-settings-id="{{ 'menu' | settings_id: section: section }}">

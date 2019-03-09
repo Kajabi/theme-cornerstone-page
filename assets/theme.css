@@ -1,0 +1,42 @@
+.text-right {
+  text-align: right; }
+
+.text-center {
+  text-align: center; }
+
+.parsley-errors-list {
+  margin-bottom: 0; }
+
+body {
+  font-family: var(--font-default); }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-heading); }
+
+a {
+  color: var(--color-primary); }
+
+.footer {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee; }
+  .footer img {
+    height: 40px; }
+  .footer a {
+    margin-right: 20px; }
+
+.header {
+  padding: 20px 0;
+  border-bottom: 1px solid #eee; }
+  .header img {
+    height: 40px; }
+  .header a {
+    margin-right: 20px; }
+
+.powered-by {
+  padding: 15px;
+  font-size: 14px; }
+  .powered-by a {
+    color: #222; }
+
+.section, .section-sm, .section-lg {
+  border-bottom: 1px solid #eee; }
