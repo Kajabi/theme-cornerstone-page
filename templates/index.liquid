@@ -22,15 +22,15 @@
     <link href="{{ settings.favicon | image_picker_url: 'favicon.png' }}?v=2" rel="shortcut icon" />
     <link rel="canonical" href="{{ canonical_url }}" />
 
-    <!-- Cornerstone CSS ================================================== -->
-    <link rel="stylesheet" href="https://www.kajabicornerstone.com/stylesheets/cornerstone-1.1.1.css">
-
     <!-- Google Fonts ================================================== -->
     {% if settings.font_family ==  settings.heading_font_family%}
       <link href="//fonts.googleapis.com/css?family={{ settings.font_family | replace: ' ', '+' }}:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     {% else %}
       <link href="//fonts.googleapis.com/css?family={{ settings.font_family | replace: ' ', '+' }}:400,700,400italic,700italic|{{ settings.heading_font_family | replace: ' ', '+' }}:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     {% endif %}
+
+    <!-- Cornerstone CSS ================================================== -->
+    <link rel="stylesheet" href="https://www.kajabicornerstone.com/stylesheets/cornerstone-beta-1.1.1.css">
 
     <!-- KJB CSS Variables ================================================== -->
     {% include "css-variables" %}
@@ -42,7 +42,7 @@
 
     <!-- Header hook ====================================================== -->
     {% content_for_header %}
-    
+
   </head>
   <body>
 
