@@ -1,4 +1,4 @@
-# Cornerstone Landing Page
+#  Landing Page
 
 Cornerstone Landing Page Theme represents the Kajabi UX Team's opinionated starting point for new theme projects. It strives to include up-to-date best practices and solutions that we have deemed needed for the majority of themes we build. It is a reflection of what’s possible when building a theme!
 
@@ -6,7 +6,7 @@ Cornerstone Landing Page Theme represents the Kajabi UX Team's opinionated start
 
 When launching Cornerstone for the first time, you may notice a lack of CSS styles. Is Cornerstone broken? Definitely not! Keep in mind this was done intentionally. Cornerstone is not a framework but rather a starting point for your project. It contains all the files the Kajabi UX Team considers to be the bare essentials to building a Kajabi theme.
 
-For templates and snippets, standard Liquid tags and logic have been included with little to no markup, classes, or other code that you will need to remove. The src/styles/theme.scss file contains extremely limited styling to not get in the way of developers' CSS preferences.
+For templates and snippets, standard Liquid tags and logic have been included with little to no markup, classes, or other code that you will need to remove. The styles/theme.scss file contains extremely limited styling to not get in the way of developers' CSS preferences.
 
 ## Getting started
 
