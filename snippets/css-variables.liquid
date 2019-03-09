@@ -1,8 +1,19 @@
 <style>
+
   :root {
     --color-primary: {{ settings.color_primary }};
-
     --font-default: {{ settings.font_family }};
-    --font-heading: {{ settings.heading_font_family }};
   }
+
+  /* IE and Edge Do not support CSS Variables */
+  /* Depending on how you want to support IE styles need to be called out below to support */
+  @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+    body {
+      font-family: {{ settings.font_family }};
+    }
+    a {
+      color: {{ settings.color_primary }};
+    }
+  }
+
 </style>

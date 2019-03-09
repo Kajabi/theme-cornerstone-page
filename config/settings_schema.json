@@ -34,15 +34,7 @@
       },
       {
         "type": "font_select",
-        "label": "Heading Font Family",
-        "id": "heading_font_family",
-        "default": "Open Sans",
-        "preset": "google_fonts",
-        "options": []
-      },
-      {
-        "type": "font_select",
-        "label": "Base Font Family",
+        "label": "Font Family",
         "id": "font_family",
         "default": "Open Sans",
         "preset": "google_fonts",
