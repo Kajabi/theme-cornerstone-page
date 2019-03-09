@@ -17,6 +17,12 @@
             {% include "block_text" %}
           {% when 'image' %}
             {% include "block_image" %}
+          {% when 'video' %}
+            {% include "block_video" %}
+          {% when 'form' %}
+            {% include "block_form" %}
+          {% when 'cta' %}
+            {% include "block_cta" %}
         {% endcase %}
       {% endfor %}
     </div>
@@ -115,10 +121,133 @@
           "default": ""
         },
         {
-          "type": "checkbox",
-          "id": "link_target",
-          "label": "Open In New Window",
-          "default": "false"
+          "type": "header",
+          "content": "Block Appearance",
+          "style": "subheading"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "col-6",
+          "options": [
+            { "value": "col-1", "label": "1/12" },
+            { "value": "col-2", "label": "2/12" },
+            { "value": "col-3", "label": "3/12" },
+            { "value": "col-4", "label": "4/12" },
+            { "value": "col-5", "label": "5/12" },
+            { "value": "col-6", "label": "6/12" },
+            { "value": "col-7", "label": "7/12" },
+            { "value": "col-8", "label": "8/12" },
+            { "value": "col-9", "label": "9/12" },
+            { "value": "col-10", "label": "10/12" },
+            { "value": "col-11", "label": "11/12" },
+            { "value": "col-12", "label": "12/12" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "video",
+      "name": "Video",
+      "elements": [
+        {
+          "type": "header",
+          "content": "Video"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "header",
+          "content": "Block Appearance",
+          "style": "subheading"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "col-6",
+          "options": [
+            { "value": "col-1", "label": "1/12" },
+            { "value": "col-2", "label": "2/12" },
+            { "value": "col-3", "label": "3/12" },
+            { "value": "col-4", "label": "4/12" },
+            { "value": "col-5", "label": "5/12" },
+            { "value": "col-6", "label": "6/12" },
+            { "value": "col-7", "label": "7/12" },
+            { "value": "col-8", "label": "8/12" },
+            { "value": "col-9", "label": "9/12" },
+            { "value": "col-10", "label": "10/12" },
+            { "value": "col-11", "label": "11/12" },
+            { "value": "col-12", "label": "12/12" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "form",
+      "name": "Form",
+      "elements": [
+        {
+          "type": "header",
+          "content": "Form"
+        },
+        {
+          "type": "form",
+          "id": "form",
+          "label": "Form",
+          "default": "default",
+          "allow_blank": true
+        },
+        {
+          "type": "header",
+          "content": "Block Appearance",
+          "style": "subheading"
+        },
+        {
+          "type": "select",
+          "id": "width",
+          "label": "Width",
+          "default": "col-6",
+          "options": [
+            { "value": "col-1", "label": "1/12" },
+            { "value": "col-2", "label": "2/12" },
+            { "value": "col-3", "label": "3/12" },
+            { "value": "col-4", "label": "4/12" },
+            { "value": "col-5", "label": "5/12" },
+            { "value": "col-6", "label": "6/12" },
+            { "value": "col-7", "label": "7/12" },
+            { "value": "col-8", "label": "8/12" },
+            { "value": "col-9", "label": "9/12" },
+            { "value": "col-10", "label": "10/12" },
+            { "value": "col-11", "label": "11/12" },
+            { "value": "col-12", "label": "12/12" }
+          ]
+        }
+      ]
+    },
+    {
+      "type": "cta",
+      "name": "Call To Action",
+      "elements": [
+        {
+          "type": "header",
+          "content": "Call To Action"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Call To Action"
+        },
+        {
+          "type": "action",
+          "id": "action",
+          "label": "Action",
+          "default": "https://theme-developers.kajabi.com/"
         },
         {
           "type": "header",

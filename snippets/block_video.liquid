@@ -1,0 +1,6 @@
+{% assign v = current_site.find_video[block.settings.video] %}
+<div class="{{ block.settings.width }}" kjb-settings-id="{{ 'video' | settings_id: section: section, block: block }}">
+  {% if v %}
+    {{ v | wistia_video: player_color: settings.color_primary, playerPreference: "html5" }}
+  {% endif %}
+</div>

@@ -4,6 +4,9 @@
 .text-center {
   text-align: center; }
 
+.parsley-errors-list {
+  margin-bottom: 0; }
+
 body {
   font-family: var(--font-default); }
 

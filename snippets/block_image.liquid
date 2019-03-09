@@ -2,7 +2,7 @@
   {% if block.settings.img_action == "" %}
     <img data-src="{{ block.settings.image | image_picker_url: 'placeholder.png' }}" class="lazyload"/>
   {% else %}
-    <a href="{{ block.settings.img_action }}" target="{{ block.settings.link_target }}">
+    <a href="{{ block.settings.img_action }}">
       <img data-src="{{ block.settings.image | image_picker_url: 'placeholder.png' }}" class="lazyload"/>
     </a>
   {% endif %}
