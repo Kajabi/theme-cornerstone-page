@@ -12,7 +12,7 @@ For templates and snippets, standard Liquid tags and logic have been included wi
 
 Cornerstone works great along with your text editor and git to create a local version controlled enviornment terrifif for development. The link below will help you get setup.
 
-[Setting Up Your Local Environment link](https://theme-developers.kajabi.com/docs/4sm4oc5obnzg4orgyanoe4)
+[🚀 Setting Up Your Local Environment link](https://theme-developers.kajabi.com/docs/4sm4oc5obnzg4orgyanoe4)
 
 ## CSS Documentation
 
