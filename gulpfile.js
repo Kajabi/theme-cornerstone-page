@@ -5,8 +5,8 @@ var sass = require('gulp-sass');
 sass.compiler = require('node-sass');
 
 gulp.task('styles', function(){
-  return gulp.src('./styles/styles.scss')
-    .pipe(concat("styles.css"))
+  return gulp.src('./styles/theme.scss')
+    .pipe(concat("theme.css"))
     .pipe(sass().on('error', sass.logError))
     .pipe(gulp.dest('assets'))
 });

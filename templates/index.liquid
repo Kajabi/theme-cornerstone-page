@@ -23,21 +23,19 @@
     <link rel="canonical" href="{{ canonical_url }}" />
 
     <!-- Google Fonts ================================================== -->
-    {% if settings.font_family ==  settings.heading_font_family%}
+    {% if settings.font_family %}
       <link href="//fonts.googleapis.com/css?family={{ settings.font_family | replace: ' ', '+' }}:400,700,400italic,700italic" rel="stylesheet" type="text/css">
-    {% else %}
-      <link href="//fonts.googleapis.com/css?family={{ settings.font_family | replace: ' ', '+' }}:400,700,400italic,700italic|{{ settings.heading_font_family | replace: ' ', '+' }}:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     {% endif %}
 
     <!-- Cornerstone CSS ================================================== -->
     <link rel="stylesheet" href="https://www.kajabicornerstone.com/stylesheets/cornerstone-beta-1.1.1.css">
 
-    <!-- KJB CSS Variables ================================================== -->
+    <!-- CSS Settings Variables ================================================== -->
     {% include "css-variables" %}
 
     <!-- Kajabi CSS ================================================== -->
     {{ 'core.css' | kajabi_asset_url | stylesheet_tag }}
-    {{ 'styles.css' | asset_url | stylesheet_tag }}
+    {{ 'theme.css' | asset_url | stylesheet_tag }}
     {{ 'overrides.css' | asset_url | stylesheet_tag }}
 
     <!-- Header hook ====================================================== -->
