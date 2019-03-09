@@ -4,7 +4,7 @@ Cornestone Landing Page Theme represents the Kajabi UX Team's opinionated starti
 
 ## Intentional lack of styles
 
-When launching Cornestone for the first time, you may notice a lack of CSS styles. Is Cornestone broken? Definitely not! Keep in mind this was done intentionally. Cornestone is not a framework but rather a starting point for your project. It contains all the files the Shopify Themes team considers to be the bare essentials to building a Shopify theme.
+When launching Cornestone for the first time, you may notice a lack of CSS styles. Is Cornestone broken? Definitely not! Keep in mind this was done intentionally. Cornestone is not a framework but rather a starting point for your project. It contains all the files the Kajabi UX Team considers to be the bare essentials to building a Kajabi theme.
 
 For templates and snippets, standard Liquid tags and logic have been included with little to no markup, classes, or other code that you will need to remove. The src/styles/theme.scss file contains extremely limited styling to not get in the way of developers' CSS preferences.
 
