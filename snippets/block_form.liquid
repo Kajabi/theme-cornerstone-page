@@ -4,6 +4,6 @@
     {% for field in f.fields %}
       {{ field | form_input: label: true, placeholder: false }}
     {% endfor %}
-    <button id="form-button" type="submit">SUBMIT</button>
+    <button id="form-button" class="btn" type="submit">SUBMIT</button>
   {% endform %}
 </div>
