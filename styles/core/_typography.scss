@@ -1,7 +1,7 @@
 body {
-  font-family: var(--font-default);
+  font-family: $font-family;
 }
 
 a {
-  color: var(--color-primary);
+  color: $color-primary;
 }
