@@ -1,8 +1,8 @@
 {% if current_site_user %}
-  <a href="/library" kjb-settings-id="{{ language_library }}">{{ settings.language_library }}</a>
-  <span kjb-settings-id="{{ language_settings }}">{{ settings.language_settings | member_settings_link }}</span>
-  <span kjb-settings-id="{{ language_logout }}">{{ settings.language_logout | member_logout_link }}</span>
+  <a href="/library" kjb-settings-id="{{ 'language_library' }}">{{ settings.language_library }}</a>
+  <span kjb-settings-id="{{ 'language_settings' }}">{{ settings.language_settings | member_settings_link }}</span>
+  <span kjb-settings-id="{{ 'language_logout' }}">{{ settings.language_logout | member_logout_link }}</span>
   <img src="{{ current_site_user | avatar_url }}" kjb-settings-id="{{ 'show_user_menu' | settings_id: section: section }}"/>
 {% else %}
-  <span kjb-settings-id="{{ language_login }}">{{ settings.language_login | member_login_link }}</span>
+  <span kjb-settings-id="{{ 'language_login' }}">{{ settings.language_login | member_login_link }}</span>
 {% endif %}

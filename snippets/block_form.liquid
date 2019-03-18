@@ -1,5 +1,5 @@
 {% assign f = current_site.find_form[block.settings.form] %}
-<div class="{{ block.settings.width }}" kjb-settings-id="{{ 'video' | settings_id: section: section, block: block }}">
+<div class="{{ block.settings.width }}" kjb-settings-id="{{ 'form' | settings_id: section: section, block: block }}">
   {% form f %}
     {% for field in f.fields %}
       {{ field | form_input: label: true, placeholder: false }}

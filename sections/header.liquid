@@ -3,7 +3,7 @@
   it clickable in the theme editor with a kjb-settings-id
 -->
 {% if section.settings.show_header %}
-  <div class="header">
+  <div class="header" kjb-settings-id="{{ 'show_header' | settings_id: section: section }}">
     <div class="container">
       <div class="media align-middle">
         <a href="/">
