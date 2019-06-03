@@ -1,10 +1,10 @@
 [
   {
     "name": "theme_info",
-    "theme_name": "Cornerstone theme",
-    "theme_version": "1.0.0",
+    "theme_name": "Cornerstone",
+    "theme_version": "1.1.1",
     "theme_author": "Kajabi",
-    "theme_documentation_url": "",
+    "theme_documentation_url": "https://developers.mykajabi.com/blog?tag=cornerstone+page",
     "theme_support_url": "https://github.com/Kajabi/theme-cornerstone-page/issues"
   },
   {
