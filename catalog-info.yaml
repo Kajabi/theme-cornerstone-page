@@ -6,6 +6,8 @@ metadata:
     - theme
     - themes
     - cornerstone
+    - cornerstone-theme
+    - theme-page
     - page
     - node
     - js
@@ -16,7 +18,8 @@ metadata:
 spec:
   system: themes
   type: theme
-  owner: themes
+  owner: build
   lifecycle: production
   dependsOn:
+    - component:kajabi-products-app
     - component:gulpjs
