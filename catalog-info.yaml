@@ -1,0 +1,28 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: theme-cornerstore-page
+  description: |
+    Cornerstone Page is a landing page theme. It's offered as boilerplate starting point for 3rd party theme developers [here](https://themes.kajabi.com/liquid/getting-started/theme-types). There is no "release" for the Cornerstone Page Theme, as it isn't installable directly in Kajabi Admin.
+  tags:
+    - theme
+    - themes
+    - cornerstone
+    - cornerstone-theme
+    - theme-page
+    - page
+    - node
+    - js
+    - javascript
+    - liquid
+  annotations:
+    backstage.io/source-location: url:https://github.com/Kajabi/theme-cornerstone-page
+    github.com/project-slug: Kajabi/theme-cornerstone-page
+spec:
+  system: themes
+  type: theme
+  owner: build
+  lifecycle: production
+  dependsOn:
+    - component:kajabi-products-app
+    - component:gulpjs
